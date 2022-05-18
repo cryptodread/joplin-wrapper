@@ -1,7 +1,7 @@
-FROM arm64v8/node:latest
+FROM arm64v8/node:16
 
 ADD . /
-RUN cd balanceofsatoshis && npm install
+RUN cd balanceofsatoshis && npm i -g balanceofsatoshis
 
 WORKDIR /
 

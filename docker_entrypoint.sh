@@ -14,8 +14,7 @@ echo "export BOS_DEFAULT_SAVED_NODE=embassy" >> /etc/bash.bashrc
 
 # Starting command line
 while true;
-do bos nodes;
-export BOS_DEFAULT_SAVED_NODE=embassy
+do bos peers;
 sleep 20000;
 done
 

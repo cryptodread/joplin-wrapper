@@ -11,10 +11,13 @@ chmod -R a+x /root/.bos
 mv ../credentials.json /root/.bos/embassy/credentials.json
 chmod a+x /root/.bos/embassy/credentials.json
 echo "export BOS_DEFAULT_SAVED_NODE=embassy" >> /etc/bash.bashrc
+source /etc/bash.bashrc
+echo "Checking for peers..."
 
 # Starting command line
 while true;
-do bos peers;
+do export BOS_DEFAULT_SAVED_NODE=embassy;
+bos peers;
 sleep 20000;
 done
 

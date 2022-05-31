@@ -1,13 +1,12 @@
 FROM arm64v8/node:16
-
+ENV BOS_DEFAULT_SAVED_NODE=embassy
 ADD . /
 RUN cd balanceofsatoshis && npm i -g balanceofsatoshis
 
-WORKDIR /app/
-RUN npm install --global serve
+WORKDIR /usr/local/lib/
 RUN npm install --global serve
 RUN npm install --global xterm
-ADD ./homepage.html ./index.html
+ADD ./homepage.html /usr/local/lib/index.html
 
 WORKDIR /
 

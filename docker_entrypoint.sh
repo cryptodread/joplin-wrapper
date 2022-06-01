@@ -2,23 +2,12 @@
 
 set -a
 
-# Display current installed version and help
-echo "Balance of Satoshis - Version: "
-bos --version
-echo "Configuring Balance of Satoshis..."
-mkdir -p /root/.bos/embassy
-chmod -R a+x /root/.bos
-mv /credentials.json /root/.bos/embassy/credentials.json
-chmod a+x /root/.bos/embassy/credentials.json
-echo "Starting xterm UI..."
-cd /usr/local/lib
-serve --cors --single --no-clipboard --no-compression --symlinks
 
-echo "Checking for peers..."
+echo "Starting Joplin Shell..."
 
 # Starting command line
 while true;
-do bos peers;
+do 
 sleep 20000;
 done
 

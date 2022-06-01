@@ -1,18 +1,18 @@
-id: balanceofsatoshis 
-title: Balance of Satoshis
-version: 11.64.2
-release-notes: Upgrade to EmbassyOS v0.3.0
+id: joplin 
+title: Joplin
+version: 2.7.15
+release-notes: Initial Release for EmbassyOS v0.3.0.3
 license: mit
-wrapper-repo: "https://github.com/cryptodread/balanceofsatoshis-wrapper"
-upstream-repo: "https://github.com/alexbosworth/balanceofsatoshis"
-support-site: "https://github.com/alexbosworth/balanceofsatoshis/issues"
-marketing-site: "https://github.com/alexbosworth"
-donation-url: "https://yalls.org/hashcash/7bff5e4f-4534-4cca-8daa-3d5a3c239919/"
+wrapper-repo: "https://github.com/cryptodread/joplin-wrapper"
+upstream-repo: "https://github.com/laurent22/joplin"
+support-site: "https://github.com/laurent22/joplin/issues"
+marketing-site: "https://joplinapp.org/"
+donation-url: "https://github.com/sponsors/laurent22/"
 build: ["make"]
 description:
-  short: Balance of Satoshis - Tool for working with the balance of your satoshis on LND
+  short: Joplin - an open source note taking and to-do application.
   long: |
-    Balance of Satoshis - Tool for working with the balance of your satoshis on Lightning Network Daemon, using commands for working with LND balances.
+    Joplin is a free, open source note taking and to-do application, which can handle a large number of notes organised into notebooks. 
 assets:
   license: LICENSE
   icon: icon.png
@@ -47,21 +47,20 @@ interfaces:
     description: Specifies the interface to listen on for HTTP connections.
     tor-config:
       port-mapping:
-        80: "3000"
+        80: "80"
+        22300: "22300"
     lan-config:
       443:
         ssl: true
-        internal: 3000
+        internal: 80
+      22300:
+        ssl: true
+        internal: 22300
     ui: true
     protocols:
       - tcp
       - http
-dependencies:
-  lnd:
-    version: ">=0.11.0 <0.15.0"
-    requirement:
-      type: required
-    config: ~
+dependencies: ~
 backup:
   create:
     type: docker
